@@ -1,12 +1,8 @@
-/**
- * Definition for singly-l inked list.
- * class ListNode {
- *     public int val;
- *     public ListNode next;
- *     ListNode(int x) { val = x; next = null; }
- * }
+/*
+	Floy cycle- detection algo
  */
 public class Solution {
+
 	public ListNode detectCycle(ListNode a) {
 	    ListNode fast = a;
 	    ListNode slow = a;
