@@ -1,0 +1,42 @@
+public class Solution {
+	public void nextPermutation(ArrayList<Integer> a) {
+	    int size = a.size();
+	    int i = size-1;
+	    int j;
+	    while(i>0 && a.get(i-1)>=a.get(i)){
+	        i--;
+	    }
+	    if(i<=0){
+	        Collections.sort(a);
+	    }else{
+	       //  System.out.println("i="+i);
+	        j=size-1;
+	        while(a.get(i-1)>=a.get(j)){
+	            j--;
+	        }
+	       // print(a);
+	        int temp = a.get(j);
+	        a.set(j,a.get(i-1));
+	        a.set(i-1,temp);
+	       //  print(a);
+	        j=size-1;
+	        
+	        while(i<j){
+	           temp = a.get(i);
+	            a.set(i,a.get(j));
+	            a.set(j,temp);
+	            i++;
+	            j--;
+	        }
+	       //  print(a);
+	    }
+	   // 
+	   
+	}
+	public void print(ArrayList<Integer> a){
+	    for(int i=0;i<a.size();i++){
+	        System.out.print(a.get(i)+" ");
+	    }
+	    System.out.println();
+	}
+}
